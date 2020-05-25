@@ -1,25 +1,47 @@
-# Enodo Fullstack Engineering Challenge
-
-Welcome to our Fullstack Engineering Challenge repository. This README will guide you on how to participate in this challenge.
-
-Please fork this repo before you start working on the challenge. We will evaluate the code on the fork.
-
-
-## Challenge
-
-
-Front-end and backend to allow users to search, select, or unselect properties from the DB.
+# Enodo Fullstack Challenge
 
 ## Requirements
-- Build frontend with Element.js and Vue.js
-- Create DB from data in excel file (suggestion: Sqlite)
-- Create API to interact with database (suggestion: falcon, flask, express...)
-- Input field with [autocomplete](https://element.eleme.io/#/en-US/component/input#autocomplete), displaying the properties from the DB through the API.
-  - On Selection of search result, save as "Selected" to DB.
-- Table Showing selected properties:
-  - Column 1: Full Address
-  - Column 2: Class Description
-  - Column 3: Delete button
-- Include a delete button to unselect property from DB.
-- Add a test to your implementation.
-- Include a Readme on how to run your solution.
+
+This application was developed with the following developer tools:
+
+* node 8.12.0
+* yarn 1.7.0
+* python 3.6.6
+* bash 4.4.23 (optional dependency used by install scripts)
+
+## Installation
+
+To install application dependencies, navigate to the root directory of this repository and execute the following command:
+
+```
+    $ ./install.sh
+```
+
+This script runs `yarn install` to install UI dependencies, runs `python3 -m venv` to create a Python virtual environment, and runs `pip install` to install Python dependencies within the newly created virtual environment.
+
+## Serving Locally
+
+To serve the application locally on your machine, using development servers, navigate to the root directory of this repository and run the following command:
+
+```
+    $ ./run.sh
+```
+
+This command starts separate development servers for the Flask-based API application and the Vue-based UI application using default ports (5000 and 8080 respectively).
+
+The application should be available at `http://localhost:8080/`.
+
+## Shutdown
+
+Starting the application with `run.sh` will save the PIDs for each of the running servers in files named `vue.pid` and `flask.pid`.
+
+Run `shutdown.sh` to read these files and shut down the processes corresponding to each server PID.
+
+```
+    $ ./shutdown.sh
+```
+
+## Testing
+
+An end-to-end test, written using Selenium, is included in the `tests` directory. See further notes inside `tests`.
+
